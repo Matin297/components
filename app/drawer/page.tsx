@@ -15,6 +15,18 @@ export default function DrawerEntry() {
       >
         Permanent - Right
       </Link>
+      <Link
+        href="/drawer/persistent/left"
+        className="bg-teal-500 border p-2 rounded inline-block hover:bg-teal-600 transition-colors"
+      >
+        Persistent - Left
+      </Link>
+      <Link
+        href="/drawer/persistent/right"
+        className="bg-teal-500 border p-2 rounded inline-block hover:bg-teal-600 transition-colors"
+      >
+        Persistent - Right
+      </Link>
     </section>
   );
 }
