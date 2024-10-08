@@ -1,10 +1,11 @@
-import Drawer, { DrawerPaper } from "@/components/drawer";
+import Paper from "@/components/paper";
+import Drawer from "@/components/drawer";
 
 export default function DrawerPL() {
   return (
     <main className="flex">
       <Drawer className="flex-shrink-0 w-52">
-        <DrawerPaper anchor="left" className="w-52 p-4">
+        <Paper anchor="left" className="w-52 p-4">
           <h2 className="font-semibold mb-2">Header Title</h2>
           <ul className="divide-y-2 text-sm">
             <li className="p-2">Taena</li>
@@ -14,7 +15,7 @@ export default function DrawerPL() {
             <li className="p-2">Trystine</li>
             <li className="p-2">Red Viper</li>
           </ul>
-        </DrawerPaper>
+        </Paper>
       </Drawer>
       <section className="flex-grow p-4 space-y-2">
         <h1 className="text-xl font-bold">Drawer</h1>

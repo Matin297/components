@@ -2,7 +2,8 @@
 
 import clsx from "clsx";
 import { useState } from "react";
-import Drawer, { DrawerSlide } from "@/components/drawer";
+import Slide from "@/components/slide";
+import Drawer from "@/components/drawer";
 
 export default function PersistentDrawer() {
   const [open, setOpen] = useState(false);
@@ -63,7 +64,7 @@ export default function PersistentDrawer() {
         </p>
       </section>
       <Drawer className="flex-shrink-0 w-52">
-        <DrawerSlide anchor="right" open={open} className="w-52 p-4">
+        <Slide anchor="right" open={open} className="w-52 p-4">
           <header className="flex justify-between items-center">
             <h2 className="font-semibold mb-2">Header Title</h2>
             <button
@@ -82,7 +83,7 @@ export default function PersistentDrawer() {
             <li className="p-2">Trystine</li>
             <li className="p-2">Red Viper</li>
           </ul>
-        </DrawerSlide>
+        </Slide>
       </Drawer>
     </main>
   );
