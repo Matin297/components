@@ -1,13 +1,17 @@
+"use client";
+
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 import FadeTransition from "@/components/fade";
+import { useModal } from "@/components/modal/modal-context";
 
 interface BackdropProps extends PropsWithChildren {
-  open: boolean;
   className?: string;
 }
 
-export default function Backdrop({ children, open, className }: BackdropProps) {
+export default function Backdrop({ children, className }: BackdropProps) {
+  const { open } = useModal();
+
   return (
     <FadeTransition
       open={open}

@@ -12,8 +12,8 @@ export default function PersistentDrawer() {
     <main>
       <Drawer>
         <Modal transition="on" open={open}>
-          <Backdrop open={open} />
-          <DrawerModal open={open} anchor="left" className="w-52 p-4">
+          <Backdrop />
+          <DrawerModal anchor="left" className="w-52 p-4">
             <header className="flex justify-between items-center">
               <h2 className="font-semibold mb-2">Header Title</h2>
               <button

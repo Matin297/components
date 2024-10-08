@@ -8,8 +8,8 @@ export default function ModalSlide({
   onEnter,
   onExited,
   ...props
-}: SlideTransitionProps) {
-  const { setExited } = useModal();
+}: Omit<SlideTransitionProps, "open">) {
+  const { setExited, open } = useModal();
 
   function handleEnter() {
     setExited(false);
@@ -27,5 +27,12 @@ export default function ModalSlide({
     }
   }
 
-  return <Slide onEnter={handleEnter} onExited={handleExited} {...props} />;
+  return (
+    <Slide
+      open={open}
+      onEnter={handleEnter}
+      onExited={handleExited}
+      {...props}
+    />
+  );
 }
