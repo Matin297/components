@@ -1,9 +1,3 @@
-/**
- * Variants:
- *  Modal
- *  Docked
- */
-
 import clsx from "clsx";
 import { forwardRef, PropsWithChildren } from "react";
 
@@ -23,5 +17,4 @@ const Drawer = forwardRef<HTMLDivElement, DrawerProps>(function Drawer(
 });
 
 export default Drawer;
-export { default as DrawerPaper } from "./paper";
-export { default as DrawerSlide } from "./slide";
+export { default as DrawerModal } from "./modal";
