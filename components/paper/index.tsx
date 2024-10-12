@@ -1,14 +1,14 @@
 import clsx from "clsx";
 import { type Anchor } from "@/components/utils";
-import { forwardRef, PropsWithChildren } from "react";
+import { type HTMLAttributes, forwardRef, PropsWithChildren } from "react";
 
-interface PaperProps extends PropsWithChildren {
+interface PaperProps extends PropsWithChildren, HTMLAttributes<HTMLDivElement> {
   anchor?: Anchor;
   className?: string;
 }
 
 const Paper = forwardRef<HTMLDivElement, PaperProps>(function PaperComponent(
-  { anchor, className, children },
+  { anchor, className, children, ...props },
   ref
 ) {
   return (
@@ -23,6 +23,7 @@ const Paper = forwardRef<HTMLDivElement, PaperProps>(function PaperComponent(
         anchor === "right" && "right-0 border-l",
         anchor === "bottom" && "bottom-0 border-t"
       )}
+      {...props}
     >
       {children}
     </div>
