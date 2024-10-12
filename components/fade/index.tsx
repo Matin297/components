@@ -1,13 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import { PropsWithChildren, useRef } from "react";
 import { setTransitionValue } from "@/components/utils";
+import { PropsWithChildren, useRef, MouseEvent } from "react";
 import { Transition, type TransitionStatus } from "react-transition-group";
 
 interface FadeProps extends PropsWithChildren {
   open: boolean;
   className?: string;
+  onClick: (e: MouseEvent) => void;
 }
 
 const DURATION = 300;
@@ -21,6 +22,7 @@ const STYLES = {
 
 export default function FadeTransition({
   open,
+  onClick,
   children,
   className,
 }: FadeProps) {
@@ -74,12 +76,13 @@ export default function FadeTransition({
       {(state: TransitionStatus) => (
         <div
           ref={nodeRef}
+          onClick={onClick}
+          style={{ ...STYLES[state] }}
           className={clsx(
             "opacity-0",
             className,
             state === "exited" && !open && "invisible"
           )}
-          style={{ ...STYLES[state] }}
         >
           {children}
         </div>
