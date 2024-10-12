@@ -3,12 +3,14 @@ import {
   Dispatch,
   createContext,
   SetStateAction,
+  SyntheticEvent,
   PropsWithChildren,
 } from "react";
 
 type Value = {
   open: boolean;
   exited: boolean;
+  onClose?: (e: SyntheticEvent) => void;
   setExited: Dispatch<SetStateAction<boolean>>;
 };
 
