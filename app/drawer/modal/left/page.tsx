@@ -11,7 +11,7 @@ export default function PersistentDrawer() {
   return (
     <main>
       <Drawer>
-        <Modal transition="on" open={open}>
+        <Modal transition="on" open={open} onClose={() => setOpen(false)}>
           <Backdrop />
           <DrawerModal anchor="left" className="w-52 p-4">
             <header className="flex justify-between items-center">
